@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             int titleColumn = musicCursor.getColumnIndex(android.provider.MediaStore.Audio.Media.TITLE);
             int artistColumn = musicCursor.getColumnIndex(MediaStore.Audio.Media.ARTIST);
             int duration =  musicCursor.getColumnIndex(MediaStore.Audio.Media.DURATION);
-            //problem in duration
+            //problem in Duration
             do {
                 long thisid = musicCursor.getLong(idColumn);
                 String titleName= musicCursor.getString(titleColumn);
