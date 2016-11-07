@@ -1,4 +1,4 @@
-package com.example.mdkamrul.player;
+package com.example.mdkamrul.player.Model;
 
 /**
  * Created by mdkamrul on 07-Nov-16.
@@ -50,3 +50,4 @@ public class Song {
                 ;
     }
 }
+
