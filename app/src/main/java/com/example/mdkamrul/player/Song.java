@@ -3,6 +3,7 @@ package com.example.mdkamrul.player;
 /**
  * Created by mdkamrul on 07-Nov-16.
  */
+
 public class Song {
 
     public long id;
@@ -44,8 +45,8 @@ public class Song {
         return
 
                 title + '\n' +
-                artist + "\n"+
-                duration
+                        artist + "\n"+
+                        duration
                 ;
     }
 }

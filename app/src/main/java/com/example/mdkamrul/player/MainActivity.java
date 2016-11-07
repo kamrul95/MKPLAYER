@@ -1,5 +1,8 @@
 package com.example.mdkamrul.player;
 
+import android.support.v7.app.AppCompatActivity;
+
+
 import android.content.ContentResolver;
 import android.database.Cursor;
 import android.net.Uri;
@@ -19,7 +22,6 @@ import java.util.Iterator;
 
 import static android.R.attr.duration;
 import static android.R.attr.name;
-import static com.example.mdkamrul.player.R.layout.customlayout;
 
 
 
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Toast.makeText(getApplicationContext(),songArrayList.get(2).getTitle().toString(),Toast.LENGTH_LONG).show();
         //Toast.makeText(getApplicationContext(),"Smile",Toast.LENGTH_LONG).show();
-        ArrayAdapter<Song> songArrayAdapter = new ArrayAdapter<Song>(getApplicationContext(),android.R.layout.simple_list_item_1,songArrayList);
+        ArrayAdapter<Song> songArrayAdapter = new ArrayAdapter<Song>(MainActivity.this,R.layout.custom_layout,R.id.textView,songArrayList);
         listViewSong.setAdapter(songArrayAdapter);
 
     }
