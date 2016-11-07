@@ -44,7 +44,7 @@ public class Song {
         return
 
                 title + '\n' +
-                artist + "         "+
+                artist + "\n"+
                 duration
                 ;
     }
