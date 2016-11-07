@@ -8,19 +8,19 @@ public class Song {
     public long id;
     private  String title;
     private  String artist;
-    private  Double duration;
+    private  String duration;
 
-    public Double getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(Double duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 
 
 
-    public Song (long id,String title,String artist,Double duration){
+    public Song (long id,String title,String artist,String duration){
         this.id = id;
         this.title = title;
         this.artist = artist;
@@ -44,7 +44,7 @@ public class Song {
         return
 
                 title + '\n' +
-                artist + '\n'+
+                artist + "         "+
                 duration
                 ;
     }

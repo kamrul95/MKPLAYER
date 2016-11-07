@@ -17,6 +17,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import static android.R.attr.duration;
 import static android.R.attr.name;
 import static com.example.mdkamrul.player.R.layout.customlayout;
 
@@ -55,14 +56,22 @@ public class MainActivity extends AppCompatActivity {
             int idColumn = musicCursor.getColumnIndex(android.provider.MediaStore.Audio.Media._ID);
             int titleColumn = musicCursor.getColumnIndex(android.provider.MediaStore.Audio.Media.TITLE);
             int artistColumn = musicCursor.getColumnIndex(MediaStore.Audio.Media.ARTIST);
-            int duration =  musicCursor.getColumnIndex(MediaStore.Audio.Media.DURATION);
+            int duration = musicCursor.getColumnIndex(MediaStore.Audio.Media.DURATION);
             //problem in Duration
             do {
                 long thisid = musicCursor.getLong(idColumn);
                 String titleName= musicCursor.getString(titleColumn);
                 String artistName = musicCursor.getString(artistColumn);
-                Double songDuration = musicCursor.getDouble(duration);
-                songArrayList.add(new Song(thisid,titleName,artistName,songDuration));
+                String songDuration = musicCursor.getString(duration);
+                int songtime = Integer.valueOf(songDuration);
+                //int hrs = (songtime / 3600000);
+                int mns = (songtime / 60000) % 60000;
+                int scs = songtime % 60000 / 1000;
+
+                String songLength = String.format("%02d:%02d",  mns, scs);
+                //Double songDuration = musicCursor.getDouble(duration);
+                //Double songLength = (Double.valueOf(duration)/ 60000) % 60000;
+                songArrayList.add(new Song(thisid,titleName,artistName,songLength));
             }
             while (musicCursor.moveToNext());
 
